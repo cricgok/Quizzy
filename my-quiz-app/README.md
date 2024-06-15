@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+Quizzy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Quizzy is a web application that allows users to take quizzes, track their statistics, and receive detailed reports via email. The application includes features such as user authentication, quiz management, and statistical analysis.
 
-In the project directory, you can run:
+Features
 
-### `npm start`
+User Authentication: Secure login and registration for users.
+Quiz Management: Users can attempt various quizzes and save their progress.
+Statistics Tracking: Users can view their quiz statistics, including correct answers, incorrect answers, and skipped questions.
+Email Reports: Detailed quiz reports are generated and sent to the user's email.
+Responsive Design: Optimized for both desktop and mobile devices.
+Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Clone the Repository:
+git clone https://github.com/your-username/quizzy.git
+cd quizzy
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+Backend Setup:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Navigate to the backend directory and install dependencies:
 
-### `npm run build`
+cd backend
+npm install
+Create a .env file in the backend directory and add your environment variables:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+PORT=5000
+DB_HOST=your_db_host
+DB_USER=your_db_user
+DB_PASS=your_db_password
+DB_NAME=your_db_name
+JWT_SECRET=your_jwt_secret
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Start the backend server:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+npm start
+Frontend Setup:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Navigate to the frontend directory and install dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+cd ../frontend
+npm install
+Start the frontend development server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+npm start
+Usage
+User Registration and Login:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Open the application in your browser.
+Register a new account or login with existing credentials.
+Taking a Quiz:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Select a quiz from the available list.
+Answer the questions and navigate through the quiz.
+Submit the quiz to see your results.
+Viewing Statistics:
 
-### Code Splitting
+Navigate to your profile to view detailed statistics of your quiz attempts.
+Receiving Email Reports:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+After completing a quiz, you can choose to receive a detailed report via email.
