@@ -12,20 +12,19 @@ const Login = ({ setIsLoggedIn, setUser }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post('https://quizzy-1-02jo.onrender.com/login', { username, password })
-  .then(response => {
-    if (response.data.success) {
-      setUser(response.data.user);
-      setIsLoggedIn(true);
-      localStorage.setItem('token', response.data.token); // Store token
-      navigate('/');
-    } else {
-      alert(response.data.message);
-    }
-  })
-  .catch(error => {
-    console.error('Error logging in:', error.response ? error.response.data : error.message);
-  });
-
+      .then(response => {
+        if (response.data.success) {
+          setUser(response.data.user);
+          setIsLoggedIn(true);
+          localStorage.setItem('token', response.data.token); // Store token
+          navigate('/');
+        } else {
+          alert(response.data.message);
+        }
+      })
+      .catch(error => {
+        console.error('Error logging in:', error.response ? error.response.data : error.message);
+      });
   };
 
   return (
@@ -59,6 +58,7 @@ const Container = styled.div`
   align-items: center;
   height: 100vh;
   background-color: #f0f2f5;
+  padding: 20px;
 `;
 
 const Form = styled.form`
@@ -66,51 +66,75 @@ const Form = styled.form`
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-  padding: 40px;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
+
+  @media (min-width: 768px) {
+    padding: 40px;
+  }
 `;
 
 const Logo = styled.img`
-  width: 100px;
+  width: 80px;
   height: auto;
   margin-bottom: 20px;
+
+  @media (min-width: 768px) {
+    width: 100px;
+  }
 `;
 
 const Title = styled.h1`
-  font-size: 24px;
+  font-size: 20px;
   margin-bottom: 20px;
   color: #202124;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 const Input = styled.input`
   width: 100%;
   margin-bottom: 20px;
-  padding: 14px;
+  padding: 12px;
   border: 1px solid #dadce0;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px;
+
   &:focus {
     border-color: #4285f4;
     box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
     outline: none;
   }
+
+  @media (min-width: 768px) {
+    padding: 14px;
+    font-size: 16px;
+  }
 `;
 
 const Button = styled.button`
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   background-color: #1a73e8;
   border: none;
   border-radius: 4px;
   color: white;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 10px;
+
   &:hover {
     background-color: #1558b6;
+  }
+
+  @media (min-width: 768px) {
+    padding: 14px;
+    font-size: 16px;
   }
 `;
 
@@ -125,8 +149,13 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: #1a73e8;
   font-size: 14px;
+
   &:hover {
     text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 16px;
   }
 `;
 

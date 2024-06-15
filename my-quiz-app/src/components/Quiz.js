@@ -13,7 +13,7 @@ const Quiz = ({ user, setUser }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState(location.state?.selectedOptions || {});
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showHelp, setShowHelp] = useState(false); // State to control HelpModal visibility
+  const [showHelp, setShowHelp] = useState(false);
 
   useEffect(() => {
     axios.get(`https://quizzy-1-02jo.onrender.com/quizzes/${tableName}`)
@@ -136,27 +136,26 @@ const Quiz = ({ user, setUser }) => {
               <MenuList>
                 {questions.map((question, index) => (
                   <MenuItem
-                  key={index}
-                  onClick={() => {
-                    setCurrentQuestionIndex(index);
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  <QuestionLabel>
-                    MCQ {index + 1}
-                  </QuestionLabel>
-                  <QuestionPoints>5 Points</QuestionPoints>
-                  <QuestionStatus answered={selectedOptions[index] !== undefined}>
-                    <input type="radio" checked={selectedOptions[index] !== undefined} readOnly />
-                  </QuestionStatus>
-                </MenuItem>
-                
+                    key={index}
+                    onClick={() => {
+                      setCurrentQuestionIndex(index);
+                      setIsMenuOpen(false);
+                    }}
+                  >
+                    <QuestionLabel>
+                      MCQ {index + 1}
+                    </QuestionLabel>
+                    <QuestionPoints>5 Points</QuestionPoints>
+                    <QuestionStatus answered={selectedOptions[index] !== undefined}>
+                      <input type="radio" checked={selectedOptions[index] !== undefined} readOnly />
+                    </QuestionStatus>
+                  </MenuItem>
                 ))}
               </MenuList>
             </SidebarContent>
           </Sidebar>
         )}
-        <MainContent>
+        <MainContent isMenuOpen={isMenuOpen}>
           <LeftPanel>
             <QuestionNumber>Question {currentQuestionIndex + 1}</QuestionNumber>
             <QuestionText>{currentQuestion.question_text}</QuestionText>
@@ -270,6 +269,10 @@ const Content = styled.div`
   flex: 1;
   position: relative;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const Sidebar = styled.div`
@@ -280,12 +283,22 @@ const Sidebar = styled.div`
   height: 100%;
   z-index: 1000;
   border-radius: 20px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
 `;
 
 const SidebarContent = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
 `;
 
 const MenuList = styled.ul`
@@ -294,6 +307,10 @@ const MenuList = styled.ul`
   margin: 0;
   flex: 1;
   overflow-y: auto;
+
+  @media (max-width: 768px) {
+    overflow-y: visible;
+  }
 `;
 
 const MenuItem = styled.li`
@@ -339,6 +356,11 @@ const MainContent = styled.div`
   flex: 1;
   gap: 20px;
   margin-left: ${({ isMenuOpen }) => (isMenuOpen ? '240px' : '0')};
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-left: 0;
+  }
 `;
 
 const LeftPanel = styled.div`
@@ -354,6 +376,10 @@ const LeftPanel = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
 `;
 
 const Divider = styled.div`
@@ -361,6 +387,12 @@ const Divider = styled.div`
   background-color: #ccc;
   height: 100%;
   border-radius: 15px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 10px;
+    margin: 20px 0;
+  }
 `;
 
 const RightPanel = styled.div`
@@ -380,16 +412,28 @@ const RightPanel = styled.div`
 const QuestionNumber = styled.h3`
   font-size: 28.5px;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
 `;
 
 const QuestionText = styled.p`
   font-size: 28.5px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
 `;
 
 const QuestionHeader = styled.h2`
   font-size: 24.5px;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const Options = styled.div`
@@ -419,6 +463,10 @@ const Option = styled.div`
 const Label = styled.label`
   margin-left: 10px;
   font-size: 24.5px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const Footer = styled.div`
@@ -432,6 +480,11 @@ const Footer = styled.div`
   bottom: 0;
   border-radius: 15px;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+  }
 `;
 
 const FooterButton = styled.button`
@@ -469,6 +522,10 @@ const FooterButton = styled.button`
       background-color: #6c63ff;
       color: white;
     }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 

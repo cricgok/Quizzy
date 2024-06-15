@@ -44,7 +44,7 @@ const Home = ({ isLoggedIn, handleLogout }) => {
       <Sidebar>
         <LogoContainer>
           <FaBook size={48} color="#6c63ff" />
-          <Logo>Quizzy</Logo>
+          <Logo>Øendo</Logo>
         </LogoContainer>
         <MenuItem>
           <StyledLink to="/">Tests</StyledLink>
@@ -94,18 +94,27 @@ const Home = ({ isLoggedIn, handleLogout }) => {
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   height: 100vh;
   background-color: #f0f2f5;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 const Sidebar = styled.div`
-  width: 240px;
+  width: 100%;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 768px) {
+    width: 240px;
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -137,7 +146,11 @@ const StyledLink = styled(Link)`
 
 const MainContent = styled.div`
   flex: 1;
-  padding: 40px;
+  padding: 20px;
+
+  @media (min-width: 768px) {
+    padding: 40px;
+  }
 `;
 
 const TitleContainer = styled.div`
@@ -162,8 +175,14 @@ const QuizItem = styled.div`
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 const QuizTitle = styled.h3`
@@ -183,6 +202,11 @@ const SolveButton = styled.button`
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  margin-top: 10px;
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
 `;
 
 export default Home;

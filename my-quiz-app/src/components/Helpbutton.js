@@ -27,6 +27,18 @@ const StyledHelpButton = styled.button`
   &:hover {
     background-color: #5548c8;
   }
+
+  @media (max-width: 768px) {
+    width: 35px;
+    height: 35px;
+    margin-left: 15px;
+  }
+
+  @media (max-width: 480px) {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+  }
 `;
 
 export default HelpButton;

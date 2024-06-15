@@ -13,7 +13,7 @@ const Review = () => {
   } = location.state || {};
 
   const handleSubmit = () => {
-    navigate('/results', { state:location.state });
+    navigate('/results', { state: location.state });
   };
 
   const handleBackToQuiz = () => {
@@ -89,16 +89,29 @@ const Container = styled.div`
   padding: 40px;
   background-color: #f0f2f5;
   min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const Header = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 36px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const Legend = styled.div`
@@ -106,12 +119,22 @@ const Legend = styled.div`
   justify-content: center;
   margin-bottom: 20px;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const LegendItem = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    gap: 5px;
+  }
 `;
 
 const LegendCircle = styled.div`
@@ -119,6 +142,11 @@ const LegendCircle = styled.div`
   height: 20px;
   border-radius: 50%;
   background-color: ${({ color }) => color};
+
+  @media (max-width: 768px) {
+    width: 15px;
+    height: 15px;
+  }
 `;
 
 const Content = styled.div`
@@ -151,6 +179,12 @@ const QuestionCircle = styled.div`
   align-items: center;
   cursor: pointer;
   font-size: 18px;
+
+  @media (max-width: 768px) {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
 `;
 
 const QuestionDetails = styled.div`
@@ -160,11 +194,19 @@ const QuestionDetails = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
 `;
 
 const QuestionText = styled.div`
   font-size: 18px;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const Options = styled.div`
@@ -180,6 +222,11 @@ const Option = styled.div`
   border-radius: 8px;
   font-size: 18px;
   color: ${({ selected }) => (selected ? '#fff' : '#000')};
+
+  @media (max-width: 768px) {
+    padding: 8px;
+    font-size: 16px;
+  }
 `;
 
 const Footer = styled.div`
@@ -187,6 +234,12 @@ const Footer = styled.div`
   justify-content: center;
   margin-top: 20px;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
 `;
 
 const FooterButton = styled.button`
@@ -200,6 +253,12 @@ const FooterButton = styled.button`
   transition: all 0.3s ease;
   &:hover {
     background-color: #45a049;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 15px;
+    font-size: 16px;
+    width: 100%;
   }
 `;
 

@@ -31,15 +31,22 @@ const Overlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 20px;
 `;
 
 const Modal = styled.div`
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.3s ease-out;
+
+  @media (max-width: 480px) {
+    padding: 10px;
+    width: 90%;
+  }
 `;
 
 const ModalHeader = styled.div`
@@ -49,12 +56,21 @@ const ModalHeader = styled.div`
   border-bottom: 2px solid #3b5998;
   padding-bottom: 10px;
   margin-bottom: 10px;
+
+  @media (max-width: 480px) {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
 `;
 
 const Title = styled.h2`
   margin: 0;
   font-size: 24px;
   color: #3b5998;
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
 `;
 
 const CloseButton = styled.button`
@@ -63,24 +79,42 @@ const CloseButton = styled.button`
   font-size: 24px;
   cursor: pointer;
   color: #888;
+
   &:hover {
     color: #333;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 20px;
   }
 `;
 
 const ModalBody = styled.div`
   padding: 10px 0;
+
+  @media (max-width: 480px) {
+    padding: 8px 0;
+  }
 `;
 
 const InstructionsText = styled.p`
   font-size: 18px;
   margin-bottom: 10px;
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
 `;
 
 const Email = styled.p`
   font-size: 20px;
   color: #3b5998;
   font-weight: bold;
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
 `;
 
 export default HelpModal;

@@ -128,6 +128,11 @@ const Header = styled.div`
   margin-bottom: 40px;
   width: 100%;
   max-width: 800px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
 `;
 
 const BackButton = styled.button`
@@ -144,6 +149,11 @@ const BackButton = styled.button`
     background: #4CAF50;
     color: #fff;
   }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    padding: 8px;
+  }
 `;
 
 const Title = styled.h1`
@@ -152,6 +162,12 @@ const Title = styled.h1`
   color: #4CAF50;
   flex: 1;
   text-align: center;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    font-size: 28px;
+    margin-top: 10px;
+  }
 `;
 
 const Content = styled.div`
@@ -170,6 +186,11 @@ const Card = styled.div`
   margin-bottom: 20px;
   width: 100%;
   text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
 `;
 
 const DetailsCard = styled(Card)`
@@ -177,12 +198,21 @@ const DetailsCard = styled(Card)`
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
+
+  @media (max-width: 768px) {
+    gap: 5px;
+  }
 `;
 
 const Subtitle = styled.h2`
   font-size: 24px;
   margin-bottom: 20px;
   color: #333;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
 `;
 
 const Info = styled.div`
@@ -195,6 +225,10 @@ const Info = styled.div`
   &:last-child {
     border-bottom: none;
   }
+
+  @media (max-width: 768px) {
+    padding: 8px 0;
+  }
 `;
 
 const Label = styled.div`
@@ -202,22 +236,41 @@ const Label = styled.div`
   font-weight: bold;
   color: #333;
   margin-right: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    margin-right: 5px;
+  }
 `;
 
 const Value = styled.div`
   font-size: 18px;
   color: #666;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const ChartContainer = styled.div`
   max-width: 400px;
   margin: 0 auto 20px auto;
+
+  @media (max-width: 768px) {
+    max-width: 300px;
+  }
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
   gap: 10px;
   margin-top: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 15px;
+  }
 `;
 
 const Button = styled.button`
@@ -231,6 +284,11 @@ const Button = styled.button`
   transition: all 0.3s ease;
   &:hover {
     background-color: #45a049;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 15px;
+    font-size: 16px;
   }
 `;
 

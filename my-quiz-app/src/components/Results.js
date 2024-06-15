@@ -167,28 +167,48 @@ const Container = styled.div`
   padding: 40px;
   background-color: #f0f2f5;
   min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const Header = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const BackButton = styled.button`
   background: none;
   border: 2px solid #ccc;
   border-radius: 50%;
-  padding: 10px;
-  font-size: 24px;
+  padding: 15px;
+  font-size: 32px;
   cursor: pointer;
   margin-right: 20px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 24px;
+  }
 `;
 
 const Title = styled.h1`
-  font-size: 24px;
+  font-size: 32px;
   color: #4CAF50;
-  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const Content = styled.div`
@@ -202,8 +222,14 @@ const ChartsContainer = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
-  max-width: 800px;
-  margin-bottom: 20px;
+  max-width: 900px;
+  margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
 `;
 
 const ChartWrapper = styled.div`
@@ -211,22 +237,37 @@ const ChartWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #ffffff;
-  padding: 20px;
+  padding: 30px;
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 45%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
 `;
 
 const ChartTitle = styled.h3`
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 10px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 const ChartText = styled.p`
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   margin-top: 20px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 const PointsContainer = styled.div`
@@ -234,6 +275,10 @@ const PointsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
 `;
 
 const glitter = keyframes`
@@ -246,36 +291,57 @@ const glitter = keyframes`
 `;
 
 const GlitterText = styled.h2`
-  font-size: 24px;
+  font-size: 32px;
   background: linear-gradient(45deg, #FFC107, #FF3D00, #4CAF50, #2196F3, #9C27B0);
   background-size: 400% 400%;
   animation: ${glitter} 2s linear infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const MotivationalText = styled.h2`
-  font-size: 24px;
+  font-size: 32px;
   color: #4CAF50;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 20px;
+  margin-top: 40px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
 `;
 
 const Button = styled.button`
-  padding: 10px 20px;
+  padding: 15px 30px;
   background-color: #4CAF50;
   color: #fff;
   border: none;
   border-radius: 8px;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
+
   &:hover {
     background-color: #45a049;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
   }
 `;
 

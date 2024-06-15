@@ -59,15 +59,25 @@ const Overlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 20px;
 `;
 
 const Modal = styled.div`
   background-color: #fff;
-  padding: 30px;
+  padding: 20px;
   border-radius: 12px;
-  width: 700px;
+  width: 90%;
+  max-width: 700px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   animation: fadeIn 0.3s ease-out;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
 `;
 
 const ModalHeader = styled.div`
@@ -75,60 +85,101 @@ const ModalHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #3b5998;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+
+  @media (max-width: 480px) {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
 `;
 
 const Title = styled.h2`
   margin: 0;
-  font-size: 28px;
+  font-size: 24px;
   color: #3b5998;
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
 `;
 
 const CloseButton = styled.button`
   background: none;
   border: none;
-  font-size: 28px;
+  font-size: 24px;
   cursor: pointer;
   color: #888;
+
   &:hover {
     color: #333;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 20px;
   }
 `;
 
 const ModalBody = styled.div`
-  padding: 15px 0;
+  padding: 10px 0;
+
+  @media (max-width: 480px) {
+    padding: 8px 0;
+  }
 `;
 
 const InstructionsTitle = styled.p`
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
 `;
 
 const InstructionsText = styled.p`
-  font-size: 20px;
-  margin-bottom: 15px;
+  font-size: 18px;
+  margin-bottom: 10px;
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 const InstructionItem = styled.li`
-  margin-bottom: 12px;
-  font-size: 18px;
+  margin-bottom: 8px;
+  font-size: 16px;
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+  }
 `;
 
 const ModalFooter = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 15px;
+  padding-top: 10px;
   border-top: 2px solid #3b5998;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const TermsLabel = styled.label`
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
+
   input {
     margin-right: 10px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 10px;
   }
 `;
 
@@ -139,19 +190,25 @@ const TermsCheckbox = styled.input`
 `;
 
 const ProceedButton = styled.button`
-  padding: 15px 25px;
+  padding: 10px 20px;
   background-color: #4CAF50;
   border: none;
   border-radius: 6px;
   color: #fff;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 16px;
+
   &:disabled {
     background-color: #ccc;
     cursor: not-allowed;
   }
+
   &:hover:enabled {
     background-color: #45a049;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
   }
 `;
 
