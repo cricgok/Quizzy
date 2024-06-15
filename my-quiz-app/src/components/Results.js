@@ -42,8 +42,8 @@ const Results = ({ user }) => {
 
   const saveResults = useCallback(async () => {
     try {
-      const token = localStorage.getItem('token'); // Assuming token is stored in localStorage
-      const response = await axios.post('http://localhost:5000/save-results', {
+      const token = localStorage.getItem('token');
+      const response = await axios.post('https://quizzy-1-02jo.onrender.com/save-results', {
         userId: user.id,
         questionsAttempted: attemptedQuestions,
         correctAnswers,
@@ -103,7 +103,7 @@ const Results = ({ user }) => {
 
       const pdfData = doc.output('datauristring');
 
-      await axios.post('http://localhost:5000/send-report', {
+      await axios.post('https://quizzy-1-02jo.onrender.com/send-report', {
         username: user.username,
         totalQuestions,
         correctAnswers,

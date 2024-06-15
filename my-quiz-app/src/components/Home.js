@@ -12,7 +12,7 @@ const Home = ({ isLoggedIn, handleLogout }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:5000/quizzes')
+    axios.get('https://quizzy-1-02jo.onrender.com/quizzes')
       .then(response => {
         setQuizzes(response.data);
       })

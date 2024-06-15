@@ -11,7 +11,7 @@ const Login = ({ setIsLoggedIn, setUser }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/login', { username, password })
+    axios.post('https://quizzy-1-02jo.onrender.com/login', { username, password })
   .then(response => {
     if (response.data.success) {
       setUser(response.data.user);

@@ -16,7 +16,7 @@ const Quiz = ({ user, setUser }) => {
   const [showHelp, setShowHelp] = useState(false); // State to control HelpModal visibility
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/quizzes/${tableName}`)
+    axios.get(`https://quizzy-1-02jo.onrender.com/quizzes/${tableName}`)
       .then(response => {
         setQuestions(response.data);
       })

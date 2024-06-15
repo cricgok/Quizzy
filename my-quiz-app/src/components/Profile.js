@@ -19,8 +19,8 @@ const Profile = ({ user }) => {
   useEffect(() => {
     const fetchUserStatistics = async () => {
       try {
-        const token = localStorage.getItem('token'); // Assuming token is stored in localStorage
-        const response = await axios.get(`http://localhost:5000/user-statistics/${user.id}`, {
+        const token = localStorage.getItem('token'); 
+        const response = await axios.get(`https://quizzy-1-02jo.onrender.com/user-statistics/${user.id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
