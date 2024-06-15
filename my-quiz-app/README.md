@@ -13,7 +13,7 @@ Responsive Design: Optimized for both desktop and mobile devices.
 Installation
 
 Clone the Repository:
-git clone https://github.com/your-username/quizzy.git
+git clone https://github.com/cricgok/quizzy.git
 cd quizzy
 
 
